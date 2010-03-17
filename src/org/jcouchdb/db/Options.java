@@ -166,6 +166,11 @@ public class Options
         return putUnencoded("group",group);
     }
     
+    public Options groupLevel(int level)
+    {
+        return putUnencoded("group_level",level);
+    }
+    
     public Options stale()
     {
         return putUnencoded("stale","ok");
