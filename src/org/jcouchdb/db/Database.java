@@ -666,7 +666,7 @@ public class Database
             }
             else
             {            
-                return URLEncoder.encode(s, "UTF-8");
+                return URLEncoder.encode(s, "UTF-8").replaceAll("\\+", "%20");
             }
         }
         catch (UnsupportedEncodingException e)

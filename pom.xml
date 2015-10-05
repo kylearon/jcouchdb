@@ -8,15 +8,19 @@
 
     <groupId>com.google.code.jcouchdb</groupId>
     <artifactId>jcouchdb</artifactId>
-    <version>1.0.1-1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
     <description>Java5 couchdb driver</description>
     <url>http://code.google.com/p/jcouchdb/</url>
+    
+    <!-- 
     <scm>
         <connection>scm:svn:http://jcouchdb.googlecode.com/svn/trunk</connection>
         <developerConnection>scm:svn:https://jcouchdb.googlecode.com/svn/trunk</developerConnection>
         <url>http://jcouchdb.googlecode.com/svn/trunk/</url>
     </scm>
+     -->
+     
     <licenses>
         <license>
             <name>Revised BSD License</name>
@@ -74,7 +78,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.1</version>
+                <version>2.10</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -201,12 +205,22 @@
         </dependency>
 
     </dependencies>
-
+    
     <distributionManagement>
-        <repository>
-          <id>fforw-de-ssh-repository</id>
-          <url>scpexe://fforw.de/home/mvnrsync/m2repo/releases</url>
-        </repository>
+        <snapshotRepository>
+		      <uniqueVersion>true</uniqueVersion>
+		      <id>soartech-internal-snapshots</id>
+		      <name>SoarTech Internal Snapshots</name>
+		      <url>https://nexus.soartech.com:8443/nexus/content/repositories/snapshots/</url>
+		      <layout>default</layout>
+		  </snapshotRepository>
+		  <repository>
+		      <uniqueVersion>true</uniqueVersion>
+		      <id>soartech-releases</id>
+		      <name>SoarTech Releases</name>
+		      <url>https://nexus.soartech.com:8443/nexus/content/repositories/releases/</url>
+		      <layout>default</layout>
+		  </repository>
     </distributionManagement>
 
 </project>
